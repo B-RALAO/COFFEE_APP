@@ -1,0 +1,11 @@
+<h1>All Coffees</h1>
+
+<% @coffees.each do |coffee| %>
+  <%= coffee.name %>
+  <%= coffee.origin %>
+  <%= coffee.strength %>
+  <%= coffee.rating %>
+  <%= coffee.description %>
+<% end %>
+
+<%= link_to "Add new coffee", new_coffee_path %>
