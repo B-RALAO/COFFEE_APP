@@ -3,6 +3,12 @@
 <% if @coffees.nil? == false %>
   <% @coffees.each do |coffee| %>
   <p>
+    <% if coffee.photo.attached? %>
+      <%= cl_image_path coffee.photo.key%>
+      <% else %>
+      <%= image_tag "coffee_beans.png", width: 300 %>
+      <%# <img src="../assets/images/coffee_beans.png"/> %>
+      <% end %>
     <%= coffee.name %>
     <%= coffee.origin %>
     <%= coffee.strength %>
