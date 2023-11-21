@@ -1,0 +1,7 @@
+<h2><%= @coffee.name %></h2>
+<p>Origin: <%= @coffee.origin %></p>
+<p>Strength:<%= @coffee.strength %></p>
+<%= @coffee.description %>
+<%= link_to "Back to coffees", coffees_path %>
+<%= link_to "Edit", edit_coffee_path(@coffee) %>
+<%= link_to "Delete", coffee_path(@coffee), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>

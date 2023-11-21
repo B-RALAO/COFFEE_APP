@@ -1,0 +1,8 @@
+<%= simple_form_for coffee do |f| %>
+  <%= f.input :name %>
+  <%= f.input :origin %>
+  <%= f.input :strength %>
+  <%= f.input :description %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
+<% end %>
