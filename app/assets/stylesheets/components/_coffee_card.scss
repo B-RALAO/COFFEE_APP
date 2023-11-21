@@ -1,0 +1,44 @@
+.coffee-card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.coffee-card > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.coffee-card h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.coffee-card p {
+  font-size: 14px;
+  opacity: .7;
+  margin: 8px 0;
+}
+
+.coffee-card .coffee-card-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.coffee-card-infos .coffee-card-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
+  border: 2px solid white;
+  border-radius: 50%;
+}
