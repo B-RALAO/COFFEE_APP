@@ -1,3 +1,13 @@
+<h1>Pages#home</h1>
+<p>Find me in app/views/pages/home.html.erb</p>
+<% if user_signed_in? %>
+  <h6>Welcome <%= current_user.first_name %></h6>
+  <% else %>
+  <h6>Please sign in </h6>
+<% end %>
+<%= link_to "Log In", new_user_session_path %>
+<%= link_to "Sign Up", new_user_registration_path %>
+
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
