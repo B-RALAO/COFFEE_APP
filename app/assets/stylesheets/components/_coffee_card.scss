@@ -3,7 +3,7 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   border-radius: 8px;
-  margin-bottom: 12px;
+  margin: 15px;
 }
 
 .coffee-card > img {
@@ -43,13 +43,30 @@
   border-radius: 50%;
 }
 
-.info-button {
-  background-color: #04AA6D; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
+.info«-button {
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  /* display: inline-block; */
+  /* font-size: 12px; */
+  border-radius: 8px;
+  /* margin: 10px; */
+  /* height: 9px; */
+  width: 100%;
+}
+#btn-brown {
+  background-color: #B0926A;
+  color: white;
+  width: 40%;
+  border: none;
+  }
+
+.btn-blue {
+  background-color: lightblue !important;
+  color: white;
+  width: 40%;
+  border: none;
+
+ }
+.container-buttons {
+  display: flex;
+  justify-content: space-between;
 }
