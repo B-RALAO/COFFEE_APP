@@ -2,10 +2,10 @@
 <div class="container">
     <div class="dropdown d-flex justify-content-center mt-3">
 
-    <a class="dropdown-toggle btn btn-brown" href="#" id="Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="dropdown-toggle btn btn" href="#" id="Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       See other Top Coffees
     </a>
-    
+
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
       <li><a class="dropdown-item" href="#">Europe</a></li>
       <li><a class="dropdown-item" href="#">North America</a></li>
@@ -22,8 +22,9 @@
   </div>
 
   <h1 class="text-center text-primary fw-light m-3">Top Coffees</h1>
-  <%# <h3 class="text-center mb-3">Europe Top Coffees :</h3> %>
-
+  <div class="d-flex justify-content-end pe-4">
+    <p> <%= link_to "View all coffees", coffees_path %></p>
+  </div>
   <div class="row">
     <% if @coffees.any? %>
       <% @coffees.each do |coffee| %>
