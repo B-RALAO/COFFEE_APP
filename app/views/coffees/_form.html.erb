@@ -1,7 +1,11 @@
 <%= simple_form_for coffee do |f| %>
   <%= f.input :name, label:false %>
   <%= f.input :origin, label:false %>
-  <%= f.input :strength, label:false %>
+  <%= f.input :strength, label:false, collection: 1..5, prompt: "Strength" %>
+  <%= f.input :variety, label:false %>
+  <%= f.input :price, label:false %>
+  <%= f.input :grind, label:false, collection: Coffee::GRIND, prompt: "Grind" %>
+  <%= f.input :intensifier, label:false %>
   <%= f.input :description, label:false %>
   <%= f.input :photo, as: :file, label: "Upload a photo" %>
   <%= f.submit class: "btn btn-primary" %>

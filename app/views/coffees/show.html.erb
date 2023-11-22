@@ -7,7 +7,11 @@
         </div>
 
         <div class="shadow-sm image-div">
-          <%= cl_image_tag @coffee.photo.key, width: 300, height: 300, crop: :scale, class: "rounded shadow-sm" %>
+            <% if @coffee.photo.attached?  %>
+               <%= cl_image_tag @coffee.photo.key, width: 300, height: 300, crop: :scale, class: "rounded shadow-sm" %>
+            <% else %>
+                <%= image_tag "coffee_beans.png", width: 300 %>
+            <% end %>
         </div>
       </div>
     </div>
