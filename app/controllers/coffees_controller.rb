@@ -10,9 +10,6 @@ class CoffeesController < ApplicationController
 
   def new
     @coffee = Coffee.new
-    respond_to do |format|
-      format.html
-      format.js
     end
   end
 
