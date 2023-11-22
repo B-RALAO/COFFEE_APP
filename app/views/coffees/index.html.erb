@@ -1,12 +1,12 @@
 <h1>All Coffees</h1>
 
-<% if @coffees.nil? == false %>
+<% if @coffees.any? %>
   <% @coffees.each do |coffee| %>
-  <p>
-    <% if coffee.photo.attached? %>
-      <%= cl_image_tag coffee.photo.key%>
+    <p>
+      <% if coffee.photo.attached? %>
+        <%= cl_image_tag coffee.photo.key%>
       <% else %>
-      <%= image_tag "coffee_beans.png", width: 300 %>
+        <%= image_tag "coffee_beans.png", width: 300 %>
       <% end %>
     <%= coffee.name %>
     <%= coffee.origin %>
