@@ -1,27 +1,16 @@
 
-
-<nav class="navbar navbar-expand-lg navbar-white bg-white d-flex justify-content-center">
-
+<nav class="fixed-top navbar navbar-expand-lg navbar-white bg-white d-flex justify-content-center">
 
   <div class="container-fluid bg-success">
 
-
-    <a class="align-items-center navbar-brand text-align d-flex" href="#">
-      <img class="avatar" id="navbar-logo" src="https://1000logos.net/wp-content/uploads/2022/09/Stars-Coffee-Logo.jpg" />
-      <h4 class="m-3"><strong>Stars Coffee</strong></h4>
-    </a>
-
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-
+    <div class="collapse navbar-collapse p-4" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item d-flex align-items-center">
+          <%= image_tag 'coffee_logo.png', style:"width:40px;" %>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/"><strong>Stars Coffee</strong></a>
+        </li>
         <li class="nav-item">
           <%= link_to "Home", root_path, class: "nav-link active" %>
         </li>
@@ -53,8 +42,6 @@
           </ul>
 
         </li>
-            <!--li class="nav-item"-->
-            <!--/li-->
 
       <% else %>
 
@@ -71,8 +58,8 @@
 
       </ul>
 
-      <form class="d-flex">
-        <input class="form-control me-2 bg-white" type="search" placeholder="Search" aria-label="Search">
+      <form class="d-flex w-25">
+        <input class="form-control me-2 bg-white" type="search" placeholder="What coffee do you want?" aria-label="Search">
         <button class="btn btn-outline-primary " type="submit">Search</button>
       </form>
 
