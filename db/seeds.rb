@@ -29,7 +29,7 @@ puts 'Creating users for you'
     coffee.user = users
     coffee.save!
     puts 'Coffee created'
-    end
+  end
 end
 
 puts 'Finished creating coffees'

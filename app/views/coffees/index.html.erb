@@ -1,25 +1,17 @@
-<h1>All Coffees</h1>
-
-<% if @coffees.any? %>
-  <% @coffees.each do |coffee| %>
-    <p>
-      <% if coffee.photo.attached? %>
-        <%= cl_image_tag coffee.photo.key%>
-      <% else %>
-        <%= image_tag "coffee_beans.png", width: 300 %>
+<div class="container">
+  <div class=>
+    <div class="btn btn-primary m-3 justify-content-end">
+      <%= link_to "Add new coffee", new_coffee_path, class: "text-white" %>
+    </div>
+  </div>
+  <h1 class="text-center m-3">All Coffees</h1>
+  <div class="row">
+    <% if @coffees.any? %>
+      <% @coffees.each do |coffee| %>
+        <%= render "/coffees/coffee_card", coffee: coffee %>
       <% end %>
-    <%= coffee.name %>
-    <%= coffee.origin %>
-    <%= coffee.strength %>
-    <%= coffee.rating %>
-    <%= coffee.description %>
-    <%= link_to "More info", coffee_path(coffee) %>
-  </p>
-  <% end %>
-<% else %>
-  <p>No Coffees yet</p>
-<% end %>
-
-<%= link_to "Add new coffee", new_coffee_path %>
-<%= link_to "Back to home", root_path %>
-<%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: :delete}  %>
+      <% else %>
+        <p>No Coffees yet</p>
+    <% end %>
+  </div>
+</div>
