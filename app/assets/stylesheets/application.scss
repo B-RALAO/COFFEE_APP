@@ -13,3 +13,8 @@
 @import "components/show";
 @import "components/container";
 @import "components/form";
+
+body {
+  background-color: #fae7c99b;
+  color: $primary;
+}
