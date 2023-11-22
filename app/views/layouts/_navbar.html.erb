@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-lg navbar-white bg-white d-flex justify-content-center">
 
 
-  <div class="container-fluid bg-light">
+  <div class="container-fluid bg-success">
 
 
     <a class="align-items-center navbar-brand text-align d-flex" href="#">
@@ -23,11 +23,11 @@
 
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <%= link_to "Home", root_path, class: "nav-link active" %>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#">Coffees</a>
+          <%= link_to "All Coffees", coffees_path, class: "nav-link" %>
         </li>
 
         <li class="nav-item">
@@ -49,18 +49,12 @@
             <li><a class="dropdown-item" href="#">Purchases</a></li>
 
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Log out</a></li>
+            <li><%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item"  %></li>
           </ul>
 
         </li>
             <!--li class="nav-item"-->
             <!--/li-->
-
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Log out</a>
-          </li>
-
-
 
       <% else %>
 
