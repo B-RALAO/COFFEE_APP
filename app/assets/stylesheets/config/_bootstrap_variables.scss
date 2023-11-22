@@ -12,7 +12,7 @@ $font-size-base:         1rem;
 
 // Colors
 $body-color: $gray;
-$primary:    $blue;
+$primary:    rgba(112, 98, 51, 0.8);
 $success:    $green;
 $info:       $yellow;
 $danger:     $red;
@@ -24,3 +24,4 @@ $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
 // Override other variables below!
+$input-placeholder-color: grey;
