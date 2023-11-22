@@ -1,13 +1,13 @@
-<div class="d-flex justify-content-center align-items-center main-container">
+<div class="m-5 d-flex justify-content-center align-items-center main-container">
   <div class="col-6 p-3 d-flex justify-content-center shadow full-container">
     <div class="col-6 d-flex justify-content-center big-container">
       <div class="col-12 d-flex justify-content-around align-items-center flex-column just-test">
         <div class="col-12 text-center h2-div">
-          <h2 class="fs-1"><%= @coffee.name %></h2>
+          <h2 class="fs-1 fw-bold"><%= @coffee.name %></h2>
         </div>
 
         <div class="shadow-sm image-div">
-          <%= image_tag 'coffee_to_buy.png', width: 300 %>
+          <%= cl_image_tag @coffee.photo.key, width: 300, height: 300, crop: :scale, class: "rounded shadow-sm" %>
         </div>
       </div>
     </div>
@@ -15,29 +15,29 @@
     <div class="d-flex col-6 justify-content-center big-container">
       <div class="d-flex flex-column justify-content-around align-items-center just-test">
       <%# Add rating to the right top corner %>
-          <div class="col-12 p-2 text-start origin-div">
-            <p class="fs-4">Origin:</p>
+          <div class="col-12 p-2 text-start origin-div position-relative">
+            <p class="fs-4 fw-bold">Origin:</p>
             <p><%= @coffee.origin %></p>
-            <div class="coffee-bean">
-              <p class="fs-4">Rating: </p>
-              <% @coffee.rating.to_i.times do %>
-                <%= image_tag 'single_coffee_bean.png', width: 30, class: "" %>
-              <% end %>
-              <p><%= @coffee.rating %></p>
+            <div class="coffee-bean position-absolute top-0 end-0">
+              <p class="text-end me-1 fw-bold"><%= @coffee.rating %></p>
             </div>
           </div>
 
           <div class="col-12 p-2 text-start strength-div">
-            <p class="fs-4">Strength:</p>
-            <p><%= @coffee.strength %></p>
+            <p class="fs-4 fw-bold">Strength:</p>
+            <p class="ps-2"><%= @coffee.strength %>
+            <% @coffee.strength.to_i.times do %>
+                <%= image_tag 'single_coffee_bean.png', width: 30, class: "beans" %>
+              <% end %>
+              </p>
           </div>
 
           <div class="col-12 p-2 text-start description-div">
-            <p class="fs-4">Description:</p>
-            <p><%= @coffee.description %></p>
+            <p class="fs-4 fw-bold">Description:</p>
+            <p><%= @coffee.description.capitalize %></p>
           </div>
 
-      <div class="buy-div">
+      <div class="buy-div text-center">
         <p>THIS WILL BE THE PLACE WHERE WE'LL ADD THE BUYING OPTIONS</p>
       </div>
 
