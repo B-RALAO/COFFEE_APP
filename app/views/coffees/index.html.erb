@@ -1,10 +1,6 @@
 <div class="container">
   <div class='d-flex justify-content-end'>
-    <div class="btn btn-primary btn-lg m-3 rounded-4">
-      <%= link_to new_coffee_path, class: "text-white" do %>
-      <i class="fa-solid fa-plus" style="color: $primary"></i>
-      <% end %>
-    </div>
+    <%= link_to "Post a new coffee", new_coffee_path, class: "btn btn-primary rounded-4 text-white m-2" %>
   </div>
   <h1 class="text-center text-primary fw-light">All Coffees</h1>
   <div class="row">
@@ -16,4 +12,5 @@
         <p>No Coffees yet</p>
     <% end %>
   </div>
+</div>
 </div>
