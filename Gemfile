@@ -7,9 +7,11 @@ gem "cloudinary"
 
 gem "devise"
 
-gem 'faker'
+gem "faker"
 
-gem 'open-uri'
+gem "open-uri"
+
+gem "pg_search"
 
 gem "geocoder"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

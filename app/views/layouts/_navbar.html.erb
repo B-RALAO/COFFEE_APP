@@ -59,8 +59,14 @@
       </ul>
 
       <form class="d-flex w-25">
-        <input class="form-control me-2 bg-white" type="search" placeholder="What coffee do you want?" aria-label="Search">
-        <button class="btn btn-outline-primary " type="submit">Search</button>
+        <%= form_with url: coffees_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :search,
+          params[:search],
+          class: "form-control me-2 bg-white",
+          placeholder: "Search for coffee"
+        %>
+        <%= submit_tag "Search", name: "", class: "btn btn-outline-primary" %>
+    <% end %>
       </form>
 
     </div>

@@ -5,7 +5,7 @@
   <%= f.input :variety, label:false %>
   <%= f.input :price, label:false %>
   <%= f.input :grind, label:false, collection: Coffee::GRIND, prompt: "Grind" %>
-  <%= f.input :intensifier, label:false %>
+  <%= f.input :intensifier, label:false, collection: Coffee::INTENSIFIER, prompt: "Intensity" %>
   <%= f.input :description, label:false %>
   <%= f.input :photo, as: :file, label: "Upload a photo" %>
   <%= f.submit class: "btn btn-primary   border-radius-8px" %>
