@@ -12,4 +12,7 @@ class Coffee < ApplicationRecord
   validates :variety, presence: true
   validates :price, presence: true
   validates :intensifier, presence: true
+
+  geocoded_by :origin
+  after_validation :geocode, if: :will_save_change_to_origin?
 end

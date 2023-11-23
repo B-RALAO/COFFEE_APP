@@ -4,6 +4,12 @@ class CoffeesController < ApplicationController
 
   def index
     @coffees = Coffee.all
+    @markers = @coffees.geocoded.map do |coffee|
+      {
+        lat: coffee.latitude,
+        lng: coffee.longitude
+      }
+    end
   end
 
   def show
