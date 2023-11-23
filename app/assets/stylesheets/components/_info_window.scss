@@ -1,0 +1,35 @@
+// .info-window {
+//   overflow: hidden;
+//   background: white;
+//   box-shadow: 0 0 15px rgba(0,0,0,0.1);
+//   width: 150px;
+// }
+
+.info-window-big-text {
+    font-size: 14px;
+    margin: 0;
+}
+
+.info-window p {
+  font-size: 8px;
+  opacity: .7;
+}
+
+.info-window-btn {
+  text-decoration: none;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 12px;
+}
+
+#btn-brown {
+  background-color: #B0926A;
+  color: white;
+  width: 40%;
+  border: none;
+  }
+
+.container-buttons {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,1 +1,15 @@
 // Specific CSS for your home-page
+.dropdown-toggle:hover {
+  color: #594E2A !important;
+  border: none;
+}
+
+.dropdown-menu {
+  background: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 10px;
+}
+h1 {
+  margin-top: 10px;
+}

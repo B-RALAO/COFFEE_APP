@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
+
 ruby "3.1.2"
 
 gem "cloudinary"
@@ -12,6 +13,7 @@ gem "open-uri"
 
 gem "pg_search"
 
+gem "geocoder"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.2"
 

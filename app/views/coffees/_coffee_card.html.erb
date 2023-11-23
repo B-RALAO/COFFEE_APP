@@ -1,5 +1,5 @@
 <div class="col-12 col-lg-3">
-  <div class="coffee-card mb-5">
+  <div class="coffee-card mb-5 w-100 ">
     <% if coffee.photo.attached?  %>
       <%= cl_image_tag coffee.photo.key, width: 300 %>
     <% else %>
@@ -7,15 +7,15 @@
     <% end %>
     <div class="coffee-card-infos">
       <div class="w-100">
-        <h2><%= coffee.name %></h2>
-        <h2 class="coffee-card-pricing"> £<%= coffee.price %></h2>
+        <div class="d-flex justify-content-between">
+          <h2><%= coffee.name %></h2>
+          <h2> £<%= coffee.price %></h2>
+        </div>
         <p>Origin: <%= coffee.origin %></p>
         <p>Strength: <%= coffee.strength %></p>
         <p>Rating: <%= coffee.rating %></p>
-        <div class="d-flex justify-content-between">
-          <a class="btn btn-danger"id="btn-brown" href="">Request</a>
-          <%= link_to "More Info", coffee_path(coffee), class: "btn btn-primary" %>
-        </div>
+        <%= link_to "More Info", coffee_path(coffee), class: "info-button btn w-100" %>
+
       </div>
     </div>
   </div>

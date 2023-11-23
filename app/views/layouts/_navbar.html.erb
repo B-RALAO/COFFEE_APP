@@ -2,57 +2,58 @@
 
   <div class="container-fluid bg-danger shadow-sm">
 
-    <div class="collapse navbar-collapse p-4" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item d-flex align-items-center">
-          <%= image_tag 'coffee_logo.png', style:"width:40px;" %>
-        </li>
+    <div class="collapse navbar-collapse p-2 d-flex justify_content_center" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center fs-5">
+
         <li class="nav-item">
-          <a class="nav-link" href="/"><strong>Stars Coffee</strong></a>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Home", root_path, class: "nav-link active" %>
+          <%= image_tag 'coffee_logo.png', style:"width:40px;"%>
         </li>
 
         <li class="nav-item">
-          <%= link_to "All Coffees", coffees_path, class: "nav-link" %>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#">Community</a>
+          <%= link_to "Stars Coffee", root_path, class: "nav-link active, fw-bold" %>
         </li>
 
 
-      <% if user_signed_in? %>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Profile
-          </a>
-
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">My Coffees</a></li>
-            <li><a class="dropdown-item" href="#">Favorites</a></li>
-            <li><a class="dropdown-item" href="#">Messages</a></li>
-            <li><a class="dropdown-item" href="#">Purchases</a></li>
-
-            <li><hr class="dropdown-divider"></li>
-            <li><%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item"  %></li>
-          </ul>
-
-        </li>
-
-      <% else %>
-
+        <div class="ml-3 collapse navbar-collapse p-4 d-flex justify_content_center">
           <li class="nav-item">
-            <%= link_to "Log In", new_user_session_path, class: "nav-link m-2" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Sign Up", new_user_registration_path, class: "nav-link m-2" %>
+            <%= link_to "All Coffees", coffees_path, class: "nav-link" %>
           </li>
 
-      <% end %>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Community</a>
+          </li>
 
+          <% if user_signed_in? %>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Profile
+              </a>
+
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">My Coffees</a></li>
+                <li><a class="dropdown-item" href="#">Favorites</a></li>
+                <li><a class="dropdown-item" href="#">Messages</a></li>
+                <li><a class="dropdown-item" href="#">Purchases</a></li>
+
+                <li><hr class="dropdown-divider"></li>
+                <li><%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item"  %></li>
+              </ul>
+
+            </li>
+
+
+          <% else %>
+
+            <li class="nav-item">
+              <%= link_to "Log In", new_user_session_path, class: "nav-link m-2" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Sign Up", new_user_registration_path, class: "nav-link m-2" %>
+            </li>
+
+        <% end %>
+        </div>
 
 
       </ul>

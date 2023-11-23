@@ -7,6 +7,9 @@
     </div>
   </div>
   <h1 class="text-center text-primary fw-light">All Coffees</h1>
+  <div class="d-flex justify-content-end pe-4">
+    <p> <%= link_to "View on map", coffees_map_path %></p>
+  </div>
   <div class="row">
     <% if @coffees.any? %>
       <% @coffees.each do |coffee| %>

@@ -18,4 +18,7 @@ class Coffee < ApplicationRecord
   validates :description, presence: true, length: { minimum: 10 }
   validates :grind, presence: true, inclusion: { in: GRIND }
   validates :intensifier, presence: true, inclusion: { in: INTENSIFIER }
+ 
+  geocoded_by :origin
+  after_validation :geocode, if: :will_save_change_to_origin?
 end
