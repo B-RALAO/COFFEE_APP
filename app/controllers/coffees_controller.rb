@@ -4,6 +4,11 @@ class CoffeesController < ApplicationController
 
   def index
     @coffees = Coffee.all
+    if params[:search].present?
+      PgSearch::Multisearch.rebuild(Coffee)
+      results = PgSearch.multisearch(params[:search])
+      @coffees = results.map { |result| result.searchable}
+    end
   end
 
   def show
