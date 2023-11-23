@@ -1,5 +1,6 @@
 class CoffeesController < ApplicationController
   before_action :set_coffee, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: :show
 
   def index
     @coffees = Coffee.all
@@ -46,6 +47,6 @@ class CoffeesController < ApplicationController
   end
 
   def coffee_params
-    params.require(:coffee).permit(:name, :origin, :strength, :rating, :description, :photo)
+    params.require(:coffee).permit(:name, :origin, :strength, :rating, :description, :photo, :variety, :grind, :intensifier, :price)
   end
 end

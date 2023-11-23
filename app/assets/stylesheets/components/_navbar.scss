@@ -5,6 +5,7 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+  // flex-basis: content;
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -15,4 +16,8 @@
 }
 .footer-logo {
   width: 200px;
+}
+
+.navbar {
+  padding: 0;
 }
