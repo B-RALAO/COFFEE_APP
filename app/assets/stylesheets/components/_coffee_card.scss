@@ -4,6 +4,9 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   border-radius: 8px;
   margin: 15px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .coffee-card > img {
@@ -15,15 +18,16 @@
 }
 
 .coffee-card h2 {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   margin: 0;
 }
 
 .coffee-card p {
-  font-size: 14px;
+  font-size: 16px;
   opacity: .7;
   margin: 8px 0;
+
 }
 
 .coffee-card .coffee-card-infos {
@@ -43,7 +47,7 @@
   border-radius: 50%;
 }
 
-.info«-button {
+.info-button {
   text-decoration: none;
   /* display: inline-block; */
   /* font-size: 12px; */
@@ -51,13 +55,25 @@
   /* margin: 10px; */
   /* height: 9px; */
   width: 100%;
+  color: white;
+  background-color: #B0926A;
 }
+
+.info-button:hover {
+  color: white;
+  background-color: #706233;
+}
+
 #btn-brown {
   background-color: #B0926A;
   color: white;
-  width: 40%;
+  width: 100%;
   border: none;
   }
+
+#btn-brown:hover {
+  background-color:  #7D664E;
+}
 
 .btn-blue {
   background-color: lightblue !important;
