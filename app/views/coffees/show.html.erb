@@ -8,7 +8,7 @@
 
         <div class="shadow-sm image-div">
             <% if @coffee.photo.attached?  %>
-               <%= cl_image_tag @coffee.photo.key, width: 300, height: 300, crop: :scale, class: "rounded shadow-sm" %>
+              <%= cl_image_tag @coffee.photo.key, width: 300, height: 300, crop: :scale, class: "rounded shadow-sm" %>
             <% else %>
                 <%= image_tag "coffee_beans.png", width: 300 %>
             <% end %>
@@ -44,7 +44,7 @@
       <div class="buy-div text-center">
         <p>THIS WILL BE THE PLACE WHERE WE'LL ADD THE BUYING OPTIONS</p>
       </div>
-
+      <% if @coffee.user_id == current_user.id %>
         <div class="col-12 d-flex justify-content-around text-center buttons-div">
           <%= link_to coffees_path do %>
             <i class="fa-solid fa-backward fs-4" style="color: #706233;"></i>
@@ -56,6 +56,7 @@
             <i class="fa-solid fa-trash fs-4" style="color: #706233;"></i>
           <% end %>
         </div>
+      <% end %>
       </div>
     </div>
   </div>
