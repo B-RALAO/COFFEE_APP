@@ -1,0 +1,14 @@
+<% if coffee.photo.attached?  %>
+  <%= cl_image_tag coffee.photo.key, width: 130, height: 150, crop: :fill, class: "info-window-img" %>
+<% else %>
+  <%= image_tag "coffee_beans.png", width: 130, height: 150, crop: :fill %>
+<% end %>
+  <div class="w-100">
+    <div class="info-window-big-text"><%= coffee.name %></div>
+    <div class="info-window-big-text"> £<%= coffee.price %></div>
+    <p><%= coffee.origin %></p>
+    <div class="d-flex justify-content-between">
+      <%= link_to "More Info", coffee_path(coffee), class: "btn btn-primary info-window-btn" %>
+    </div>
+  </div>
+</div>
