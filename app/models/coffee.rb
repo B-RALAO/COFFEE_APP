@@ -14,11 +14,8 @@ class Coffee < ApplicationRecord
   has_one_attached :photo
 
   validates :name, :origin, :variety, :price, presence: true
-  # validates :origin, presence: true
   validates :strength, presence: true, inclusion: { in: (0..5) }
   validates :description, presence: true, length: { minimum: 10 }
   validates :grind, presence: true, inclusion: { in: GRIND }
-  # validates :variety, presence: true
-  # validates :price, presence: true
   validates :intensifier, presence: true, inclusion: { in: INTENSIFIER }
 end
