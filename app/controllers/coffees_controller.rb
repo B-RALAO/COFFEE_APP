@@ -1,5 +1,6 @@
 class CoffeesController < ApplicationController
   before_action :set_coffee, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: :show
 
   def index
     @coffees = Coffee.all
