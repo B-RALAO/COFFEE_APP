@@ -4,6 +4,12 @@ class CoffeesController < ApplicationController
 
   def index
     @coffees = Coffee.all
+    @markers = @coffees.geocoded.map do |coffee|
+      {
+        lat: coffee.latitude,
+        lng: coffee.longitude
+      }
+    end
   end
 
   def show
@@ -38,6 +44,17 @@ class CoffeesController < ApplicationController
     @coffee.destroy
 
     redirect_to coffees_path
+  end
+
+  def map
+    @coffees = Coffee.all
+    @markers = @coffees.geocoded.map do |coffee|
+      {
+        lat: coffee.latitude,
+        lng: coffee.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {coffee: coffee}),
+      }
+    end
   end
 
   private
