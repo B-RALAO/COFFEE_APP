@@ -54,7 +54,7 @@ images = [
       rating: Faker::Number.decimal(l_digits: 1, r_digits: 2),
       price: Faker::Number.decimal(l_digits: 2),
       variety: Faker::Coffee.variety,
-      intensifier: Faker::Coffee.intensifier,
+      intensifier: Coffee::INTENSIFIER.sample,
       grind: Coffee::GRIND.sample
     })
     coffee.user = users
