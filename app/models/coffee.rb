@@ -2,6 +2,7 @@ class Coffee < ApplicationRecord
   GRIND = ['coarse', 'medium-coarse', 'medium', 'fine', 'extra fine']
   has_one_attached :photo
   belongs_to :user
+  has_many :purchases
   has_one_attached :photo
 
   validates :name, presence: true

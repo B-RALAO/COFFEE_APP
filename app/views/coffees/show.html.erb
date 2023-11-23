@@ -42,7 +42,7 @@
           </div>
 
       <div class="buy-div text-center">
-        <p>THIS WILL BE THE PLACE WHERE WE'LL ADD THE BUYING OPTIONS</p>
+        <p><%= render '/purchases/purchase' %>THIS WILL BE THE PLACE WHERE WE'LL ADD THE BUYING OPTIONS</p>
       </div>
 
         <div class="col-12 d-flex justify-content-around text-center buttons-div">
@@ -60,3 +60,12 @@
     </div>
   </div>
 </div>
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalWindow">
+  Launch demo modal
+</button>
+
+
+<%= render 'layouts/modal', title: 'New cofee' do %>
+  <%= render 'purchases/form', coffee: @coffee , purchase: Purchase.new %>
+<% end %>
