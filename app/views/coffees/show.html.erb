@@ -19,6 +19,8 @@
     <div class="d-flex col-6 justify-content-center big-container">
       <div class="d-flex flex-column justify-content-around align-items-center just-test">
       <%# Add rating to the right top corner %>
+
+
           <div class="col-12 p-2 text-start origin-div position-relative">
             <p class="fs-4 fw-bold">Origin:</p>
             <p><%= @coffee.origin %></p>
@@ -26,6 +28,7 @@
               <p class="text-end me-1 fw-bold"><%= @coffee.rating %></p>
             </div>
           </div>
+
 
           <div class="col-12 p-2 text-start strength-div">
             <p class="fs-4 fw-bold">Strength:</p>
@@ -36,10 +39,12 @@
               </p>
           </div>
 
+
           <div class="col-12 p-2 text-start description-div">
             <p class="fs-4 fw-bold">Description:</p>
             <p><%= @coffee.description.capitalize %></p>
           </div>
+
 
       <div class="buy-div text-center">
         <p>THIS WILL BE THE PLACE WHERE WE'LL ADD THE BUYING OPTIONS</p>
