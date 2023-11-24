@@ -1,0 +1,23 @@
+<div class="container m-3">
+  <h2> Purchase Requests </h2>
+  <div class="w-100">
+    <div class="d-flex flex-row">
+      <% @purchases.each do |purchase| %>
+      <div class="col-3 coffee-card p-3 mb-5">
+        <h6><%= purchase.user.full_name %> has requested some coffee!</h6>
+        <p> Coffee: <%= purchase.coffee.name %> </p>
+        <p> Number of bags requested: <%= purchase.quantity %> </p>
+        <p> Status: <%= purchase.status %></p>
+        <div class="d-flex justify-content-between">
+          <div>
+            <%= link_to "Accept order", purchase_accept_path(purchase) %>
+          </div>
+          <div>
+            <%= link_to "Reject order", purchase_reject_path(purchase) %>
+          </div>
+        </div>
+      </div>
+        <% end %>
+    </div>
+  </div>
+</div>

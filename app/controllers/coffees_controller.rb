@@ -25,11 +25,21 @@ class CoffeesController < ApplicationController
     @coffee = Coffee.new(coffee_params)
     @coffee.user = @user
     @coffee.save
-    if @coffee.save
-      redirect_to coffees_path
-    else
-      render :new, status: :unprocessable_entity
+    respond_to do |format|
+      if @coffee.save
+        format.turbo_stream { redirect_to coffee_path(@coffee.id) }
+      else
+        format.turbo_stream {
+          render turbo_stream: turbo_stream.replace('purchase-form', partial: "coffees/form",
+          locals: { coffee: @coffee })
+        }
+      end
     end
+    # if @coffee.save
+    #   redirect_to coffees_path
+    # else
+    #   render :new, status: :unprocessable_entity
+    # end
   end
 
   def edit
