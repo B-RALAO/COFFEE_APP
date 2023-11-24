@@ -1,76 +1,94 @@
-<footer class="text-center text-lg-start bg-white text-muted bg-light">
+<style>
+  .container-fluid {
+    padding: 0; /* Remove the padding */
+  }
 
-  <div class="p-3 border-top bg-light">
+  footer {
+    width: 100%;
+  }
+</style>
 
-  <div class="container text-center text-md-start mt-5">
-      <div class="row p-3">
-
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          <%= image_tag 'logo.png', class: "w-100" %>
-        </div>
-
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          <div class="d-flex align-items-center text-align">
-            <div class="pb-2">
-              <%= image_tag 'coffee_logo.png', style:"width:20px;" %>
-            </div>
-            <div class="pt-1 ps-2">
-              <h6 class="text-uppercase fw-bold">Stars Coffee</h6>
-            </div>
+<div class="container-fluid">
+  <!-- Footer -->
+  <footer class="text-center text-white" style="background-color: #FAE7C9">
+    <!-- Grid container -->
+    <div class="container">
+      <!-- Section: Links -->
+      <section class="mt-5">
+        <!-- Grid row-->
+        <div class="row text-center d-flex justify-content-center pt-5">
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!" class="text-primary text-decoration-none">Home Page</a>
+            </h6>
           </div>
-          <p>
-            Welcome to Stars Coffee - your hub for coffee enthusiasts!
-            Sign in to explore and buy unique coffee blends or showcase
-            your passion by selling your own creations in our community-driven marketplace.
-          </p>
-        </div>
+          <!-- Grid column -->
 
-        <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">
-            Useful Links
-          </h6>
-           <p>
-            <%= link_to "Home Page", root_path, class: "nav-link" %>
-          </p>
-          <p>
-            <%= link_to "All Coffees", coffees_path, class: "nav-link" %>
-          </p>
-          <p>
-            <%= link_to "Community", coffees_path, class: "nav-link" %>
-          </p>
-          <p>
-            <%= link_to "About", coffees_path, class: "nav-link" %>
-          </p>
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!" class="text-primary text-decoration-none">All Coffees</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
 
-        </div>
-        <!-- Grid column -->
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!" class="text-primary text-decoration-none">Map</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
 
-        <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          <!-- Links -->
-          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-          <p><i class="fas fa-home me-3"></i> Lisbon, Rua do Conde de Redondo 91B, PT</p>
-          <p>
-            <i class="fas fa-envelope me-3"></i>
-            info@starcoffee.com
-          </p>
-          <p><i class="fas fa-phone me-3"></i> +351 289 163 631</p>
-          <p><i class="fas fa-print me-3"></i> +351 914 567 089</p>
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!" class="text-primary text-decoration-none">About</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!" class="text-primary text-decoration-none">Contact</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
         </div>
-        <!-- Grid column -->
-      </div>
-      <!-- Grid row -->
+        <!-- Grid row-->
+      </section>
+      <!-- Section: Links -->
+
+      <!-- Section: Social -->
+      <section class="text-center m-4">
+        <a href="" class="text-primary me-4">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="text-primary me-4">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="text-primary me-4">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </section>
+      <!-- Section: Social -->
     </div>
-  </div>
+    <!-- Grid container -->
 
-
-  <!-- Copyright -->
-  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2023 Copyright:
-    <a class="text-reset fw-bold" href="#">Stars Coffee</a>
-  </div>
-  <!-- Copyright -->
-</footer>
-<!-- Footer -->
+    <!-- Copyright -->
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)"
+         >
+      © 2020 Copyright:
+      <a class="text-white" href=""
+         >StarsCoffee.com</a
+        >
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</div>
+<!-- End of .container -->

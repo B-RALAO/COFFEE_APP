@@ -12,5 +12,4 @@ Rails.application.routes.draw do
   get "/coffees/map", to: "coffees#map"
 
   resources :coffees
-
 end
