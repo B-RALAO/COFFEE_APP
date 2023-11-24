@@ -7,4 +7,13 @@ class PagesController < ApplicationController
 
   def about
   end
+
+
+
+  def accept
+  end
+
+  def reject
+
+  end
 end

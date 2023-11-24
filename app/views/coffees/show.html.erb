@@ -25,10 +25,12 @@
         <div class="col-12 text-center h2-div">
           <h2 class="fs-1 fw-bold"><%= @coffee.name %></h2>
         </div>
+
           <div class="col-12 text-start origin-div position-relative">
             <p class="fs-2 fw-bold ms-1">Origin:</p>
 
             <p class="fs-4 ms-1"><%= @coffee.origin %></p>
+
             <div class="coffee-bean position-absolute top-0 end-0">
               <p class="text-end me-1 fs-4 fw-bold"><i class="fa-solid fa-star" style="color: #FFB000;"></i><%= @coffee.rating %></p>
             </div>
@@ -71,11 +73,14 @@
             <p class="fs-4"><%= @coffee.intensifier.capitalize %></p>
           </div>
 
-      <div class="col-12 buy-div text-center">
-          <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalWindow">
-            Request
-          </button>
-      </div>
+
+      <% if @coffee.user_id != current_user.id %>
+        <div class="col-12 buy-div text-center">
+            <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalWindow">
+              Request
+            </button>
+        </div>
+      <% end %>
 
       <hr>
 
