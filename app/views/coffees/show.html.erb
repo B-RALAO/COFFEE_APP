@@ -26,6 +26,7 @@
           <h2 class="fs-1 fw-bold"><%= @coffee.name %></h2>
         </div>
 
+
           <div class="col-12 text-start origin-div position-relative">
             <p class="fs-2 fw-bold ms-1">Origin:</p>
 
@@ -101,6 +102,6 @@
 
 
 
-<%= render 'layouts/modal', title: 'New cofee' do %>
+<%= render 'layouts/modal', title: 'Buy coffee' do %>
   <%= render 'purchases/form', coffee: @coffee , purchase: Purchase.new %>
 <% end %>

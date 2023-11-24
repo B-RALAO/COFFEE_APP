@@ -1,6 +1,9 @@
 <div class="container">
   <div class='d-flex justify-content-end'>
-    <%= link_to "Post a new coffee", new_coffee_path, class: "btn btn-primary rounded-4 text-white m-2" %>
+    <button type="button" class="btn btn-primary rounded-4 text-white m-2" data-bs-toggle="modal" data-bs-target="#modalWindow">
+            Post a new coffee
+    </button>
+    <%# <%= link_to "Post a new coffee", new_coffee_path, class: "btn btn-primary rounded-4 text-white m-2" %>
   </div>
   <h1 class="text-center text-primary fw-light">All Coffees</h1>
   <div class="d-flex justify-content-end pe-4">
@@ -17,3 +20,7 @@
   </div>
 </div>
 </div>
+
+<%= render 'layouts/modal', title: 'Add your coffee' do %>
+  <%= render "coffees/form", coffee: @coffee %>
+<% end %>
