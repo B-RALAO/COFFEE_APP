@@ -1,12 +1,16 @@
 <div class="container">
-   <h1 class="text-center text-primary fw-light">Top Coffees</h1>
   <div class="my-5 video-container d-flex justify-content-center position-relative">
-    <%= image_tag 'coffee_video1.gif', class: 'shadow mx-3 fit-image opacity-50', style: 'height: 300px; width: auto;' %>
-    <div class="ms-3 ps-5 title-text position-absolute bottom-0 start-50 translate-middle">
-      <h2 class="title-size mb-5">Stars Coffee</h2>
-      <h4 class="ps-3 motto-size">Awaken Your Senses, One Bean at a Time!</h4>
+    <%= image_tag 'coffee_video1.gif', class: 'shadow mx-3 fit-image opacity-50', style: 'height: 300px width: auto' %>
+    <div class="title-text position-absolute bottom-0 start-50 translate-middle">
+      <h2 class="title-size mb-5 text-center">Stars Coffee</h2>
+      <h4 class="motto-size text-center">Awaken Your Senses, One Bean at a Time!</h4>
     </div>
   </div>
+
+
+
+
+
 
   <div class="p-5">
     <div class="row align-items-center justify-content-around">
@@ -22,22 +26,25 @@
       </div>
     </div>
   </div>
+
   <hr>
 
   <div>
-    <h1 class="text-center text-primary fw-light p-5">Top Coffees</h1>
-  <div class="d-flex justify-content-end pe-4">
-    <% if user_signed_in? %>
-      <p> <%= link_to "View all coffees", coffees_path %></p>
-    <%else %>
-      <p> <%= link_to "Sign in to view more coffees!", coffees_path %></p>
-    <% end %>
-  </div>
-  <div class="row">
-    <% if @coffees.any? %>
-      <% @coffees.each do |coffee| %>
-        <%= render "/coffees/coffee_card", coffee: coffee %>
+    <h1 class="text-center text-primary fw-bold p-5">Top Coffees</h1>
+    <div class="d-flex justify-content-end pe-4">
+      <% if user_signed_in? %>
+        <p> <%= link_to "View all coffees", coffees_path %></p>
+      <%else %>
+        <p> <%= link_to "Sign in to view more coffees!", coffees_path %></p>
       <% end %>
-    <% end %>
+    </div>
+
+    <div class="row">
+      <% if @coffees.any? %>
+        <% @coffees.each do |coffee| %>
+          <%= render "/coffees/coffee_card", coffee: coffee %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
