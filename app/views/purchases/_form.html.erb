@@ -1,0 +1,6 @@
+<div id="purchase-form">
+  <%= simple_form_for [coffee, purchase] do |f| %>
+    <%= f.input :quantity %>
+    <%= f.submit class: 'btn btn-primary'%>
+  <% end %>
+</div>

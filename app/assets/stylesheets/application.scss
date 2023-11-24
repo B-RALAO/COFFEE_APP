@@ -12,8 +12,11 @@
 @import "pages/index";
 @import "components/show";
 @import "components/form";
+
+@import "components/purchase_index";
 @import "components/map";
 @import "components/info_window";
+
 
 body {
   background-color: #fae7c99b;
@@ -46,3 +49,4 @@ body {
   width: 90vw;
   height: 450px;
 }
+
