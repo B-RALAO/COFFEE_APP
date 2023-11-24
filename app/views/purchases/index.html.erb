@@ -1,0 +1,15 @@
+<div class="purchase-container">
+  <% @purchases.each do |purchase| %>
+    <div class="single-purchase">
+      <%= purchase.coffee.name %>
+      <%= purchase.coffee.origin %>
+      <%= purchase.coffee.strength %>
+      <%= purchase.coffee.description %>
+      <%= purchase.coffee.rating %>
+      <%= purchase.coffee.variety %>
+      <%= purchase.coffee.price %>
+      <%= purchase.coffee.grind %>
+      <%= purchase.coffee.intensifier %>
+    </div>
+  <% end %>
+</div>

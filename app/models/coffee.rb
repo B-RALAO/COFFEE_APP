@@ -11,6 +11,7 @@ class Coffee < ApplicationRecord
 
   has_one_attached :photo
   belongs_to :user
+  has_many :purchases
   has_one_attached :photo
 
   validates :name, :origin, :variety, :price, presence: true

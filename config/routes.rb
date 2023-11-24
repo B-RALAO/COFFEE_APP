@@ -9,7 +9,18 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  get "/about", to: "pages#about"
   get "/coffees/map", to: "coffees#map"
 
+<<<<<<< HEAD
   resources :coffees
+=======
+
+  resources :coffees do
+    resources :purchases, only: %i[index show destroy new create]
+  end
+
+  get "/coffees/map", to: "coffees#map"
+  
+>>>>>>> e6ecb92d06dedb483c8c2c7d2d916fe4f89f201a
 end

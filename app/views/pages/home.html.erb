@@ -1,6 +1,5 @@
-
 <div class="container">
-
+   <h1 class="text-center text-primary fw-light">Top Coffees</h1>
   <div class="my-5 video-container d-flex justify-content-center position-relative">
     <%= image_tag 'coffee_video1.gif', class: 'shadow mx-3 fit-image opacity-50', style: 'height: 300px width: auto' %>
     <div class="ms-3 ps-5 title-text position-absolute bottom-0 start-50 translate-middle">
@@ -27,16 +26,19 @@
   <div>
     <h1 class="text-center text-primary fw-light p-5">Top Coffees</h1>
 
-    <div class="d-flex justify-content-end pe-4">
+  <h1 class="text-center text-primary fw-light m-3">Top Coffees</h1>
+
+  <div class="d-flex justify-content-end pe-4">
+    <% if user_signed_in? %>
       <p> <%= link_to "View all coffees", coffees_path %></p>
-    </div>
-    <div class="row">
-      <% if @coffees.any? %>
-        <% @coffees.each do |coffee| %>
-          <%= render "/coffees/coffee_card", coffee: coffee %>
-        <% end %>
-      <% else %>
-        <p>No coffees yet!</p>
+    <%else %>
+      <p> <%= link_to "Sign in to view more coffees!", coffees_path %></p>
+    <% end %>
+  </div>
+  <div class="row">
+    <% if @coffees.any? %>
+      <% @coffees.each do |coffee| %>
+        <%= render "/coffees/coffee_card", coffee: coffee %>
       <% end %>
     </div>
   </div>

@@ -69,6 +69,17 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_23_155623) do
     t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable"
   end
 
+  create_table "purchases", force: :cascade do |t|
+    t.integer "quantity", default: 0
+    t.string "status", default: "Pending"
+    t.bigint "user_id", null: false
+    t.bigint "coffee_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["coffee_id"], name: "index_purchases_on_coffee_id"
+    t.index ["user_id"], name: "index_purchases_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -86,4 +97,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_23_155623) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "coffees", "users"
+  add_foreign_key "purchases", "coffees"
+  add_foreign_key "purchases", "users"
 end

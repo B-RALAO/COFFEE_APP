@@ -20,8 +20,12 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">Community</a>
+            <%= link_to "About", about_path, class: "nav-link" %>
           </li>
+
+            <li class="nav-item">
+              <%= link_to "Map", coffees_map_path, class: "nav-link" %>
+            </li>
 
           <% if user_signed_in? %>
 
@@ -34,8 +38,7 @@
                 <li><a class="dropdown-item" href="#">My Coffees</a></li>
                 <li><a class="dropdown-item" href="#">Favorites</a></li>
                 <li><a class="dropdown-item" href="#">Messages</a></li>
-                <li><a class="dropdown-item" href="#">Purchases</a></li>
-
+                <li><%= link_to 'Purchases', coffee_purchases_path(current_user), class: "dropdown-item" %></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item"  %></li>
               </ul>
@@ -53,21 +56,20 @@
             </li>
 
         <% end %>
+
         </div>
 
 
       </ul>
 
-      <form class="d-flex w-25">
-        <%= form_with url: coffees_path, method: :get, class: "d-flex" do %>
-          <%= text_field_tag :search,
-            params[:search],
-            class: "form-control me-2 bg-white",
-            placeholder: "Search for coffee"
-          %>
-          <%= submit_tag "Search", name: "", class: "btn btn-outline-primary" %>
-        <% end %>
-      </form>
+      <%= form_with url: coffees_path, method: :get, class: "d-flex w-25" do %>
+        <%= text_field_tag :search,
+          params[:search],
+          class: "form-control me-2 bg-white rounded-4",
+          placeholder: "Search for coffee"
+        %>
+        <%= submit_tag "Search", name: "", class: "btn btn-outline-primary rounded-4" %>
+      <% end %>
 
     </div>
   </div>
