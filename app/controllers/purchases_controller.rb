@@ -3,7 +3,7 @@ class PurchasesController < ApplicationController
   before_action :set_user, only: %i[create new]
 
   def index
-    @purchases = Purchase.all
+    @purchases = Purchase.where(user: current_user)
   end
 
   def show
@@ -28,6 +28,27 @@ class PurchasesController < ApplicationController
         }
       end
     end
+  end
+
+  def requests
+    @coffees = Coffee.where(user: current_user)
+    @purchases = Purchase.where(coffee_id: current_user.coffee_ids)
+  end
+
+  def accept
+    @purchase = Purchase.find(params[:id])
+    @purchase.status = "Accepted"
+    @purchase.save
+
+    redirect_to requests_path
+  end
+
+  def reject
+    @purchase = Purchase.find(params[:id])
+    @purchase.status = "Rejected"
+    @purchase.save
+
+    redirect_to requests_path
   end
 
   private

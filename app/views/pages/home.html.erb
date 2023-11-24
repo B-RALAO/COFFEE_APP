@@ -1,37 +1,31 @@
 <div class="container">
    <h1 class="text-center text-primary fw-light">Top Coffees</h1>
   <div class="my-5 video-container d-flex justify-content-center position-relative">
-    <%= image_tag 'coffee_video1.gif', class: 'shadow mx-3 fit-image opacity-50', style: 'height: 300px width: auto' %>
+    <%= image_tag 'coffee_video1.gif', class: 'shadow mx-3 fit-image opacity-50', style: 'height: 300px; width: auto;' %>
     <div class="ms-3 ps-5 title-text position-absolute bottom-0 start-50 translate-middle">
       <h2 class="title-size mb-5">Stars Coffee</h2>
       <h4 class="ps-3 motto-size">Awaken Your Senses, One Bean at a Time!</h4>
     </div>
   </div>
 
-
-  <div class="dropdown d-flex justify-content-center mt-3">
-
-    <a class="dropdown-toggle btn btn" href="#" id="Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      See other Top Coffees
-    </a>
-
-    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-      <li><a class="dropdown-item" href="#">Europe</a></li>
-      <li><a class="dropdown-item" href="#">North America</a></li>
-      <li><a class="dropdown-item" href="#">South America</a></li>
-      <li><a class="dropdown-item" href="#">Africa</a></li>
-      <li><a class="dropdown-item" href="#">Asia</a></li>
-      <li><a class="dropdown-item" href="#">Australia</a></li>
-
-
-      <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="#">Moon</a></li>
-      <li><a class="dropdown-item" href="#">Mars</a></li>
-    </ul>
+  <div class="p-5">
+    <div class="row align-items-center justify-content-around">
+      <div class="col-6 rounded-4" style="width:300px; height:200px; background-position: center;background-size: cover;background-image:url('https://perfectdailygrind.com/wp-content/uploads/2017/08/b4bdg_3_8_2017_9_41_15_854-1-e1502286325355.jpg')">
+      </div>
+      <div class="col-6 d-flex flex-column justify-content-between" style="margin-left: -15px;">
+        <h1>Brew, Share, Sip</h1>
+        <p>Welcome to Stars Coffee - your hub for coffee enthusiasts!
+        Sign in to explore and buy unique coffee blends or
+        showcase your passion by selling your own creations
+        in our community-driven marketplace.
+        </p>
+      </div>
+    </div>
   </div>
+  <hr>
 
-  <h1 class="text-center text-primary fw-light m-3">Top Coffees</h1>
-
+  <div>
+    <h1 class="text-center text-primary fw-light p-5">Top Coffees</h1>
   <div class="d-flex justify-content-end pe-4">
     <% if user_signed_in? %>
       <p> <%= link_to "View all coffees", coffees_path %></p>
@@ -44,8 +38,6 @@
       <% @coffees.each do |coffee| %>
         <%= render "/coffees/coffee_card", coffee: coffee %>
       <% end %>
-    <% else %>
-      <p>No coffees yet!</p>
     <% end %>
   </div>
 </div>

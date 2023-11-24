@@ -10,13 +10,13 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   get "/about", to: "pages#about"
-  get "/coffees/map", to: "coffees#map"
+  get "/requests", to: "purchases#requests"
+  get "/purchases/:id/accept", to: "purchases#accept", as: "purchase_accept"
+  get "/purchases/:id/reject", to: "purchases#reject", as: "purchase_reject"
 
+  get "/coffees/map", to: "coffees#map"
 
   resources :coffees do
     resources :purchases, only: %i[index show destroy new create]
   end
-
-  get "/coffees/map", to: "coffees#map"
-  
 end
