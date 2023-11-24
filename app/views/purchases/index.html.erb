@@ -1,15 +1,14 @@
-<div class="purchase-container">
-  <% @purchases.each do |purchase| %>
-    <div class="single-purchase">
-      <%= purchase.coffee.name %>
-      <%= purchase.coffee.origin %>
-      <%= purchase.coffee.strength %>
-      <%= purchase.coffee.description %>
-      <%= purchase.coffee.rating %>
-      <%= purchase.coffee.variety %>
-      <%= purchase.coffee.price %>
-      <%= purchase.coffee.grind %>
-      <%= purchase.coffee.intensifier %>
+<div class="container m-3">
+  <h2> My Purchases </h2>
+  <div class="">
+    <div class="d-flex flex-row">
+      <% @purchases.each do |purchase| %>
+      <div class="col-3 coffee-card p-3 mb-5">
+        <h5><%= purchase.coffee.name %> </h5>
+        <p> Number of bags requested: <%= purchase.quantity %> </p>
+        <p> Status: <%= purchase.status %></p>
+      </div>
+        <% end %>
     </div>
-  <% end %>
+  </div>
 </div>
