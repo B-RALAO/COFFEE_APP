@@ -27,14 +27,7 @@
               <%= link_to "Map", coffees_map_path, class: "nav-link" %>
             </li>
 
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">My Coffees</a></li>
-            <li><a class="dropdown-item" href="#">Favorites</a></li>
-            <li><a class="dropdown-item" href="#">Messages</a></li>
-            <li><%= link_to 'Purchases', coffee_purchases_path(current_user), class: "dropdown-item" %></li>
-
           <% if user_signed_in? %>
-
 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -45,8 +38,7 @@
                 <li><a class="dropdown-item" href="#">My Coffees</a></li>
                 <li><a class="dropdown-item" href="#">Favorites</a></li>
                 <li><a class="dropdown-item" href="#">Messages</a></li>
-                <li><a class="dropdown-item" href="#">Purchases</a></li>
-
+                <li><%= link_to 'Purchases', coffee_purchases_path(current_user), class: "dropdown-item" %></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item"  %></li>
               </ul>
@@ -64,6 +56,7 @@
             </li>
 
         <% end %>
+
         </div>
 
 
