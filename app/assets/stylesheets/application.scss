@@ -24,7 +24,7 @@ body {
 }
 
 .title-text {
-  width: 90vw;
+  max-width: 100%;
 }
 
 .title-size {
@@ -41,15 +41,11 @@ body {
 }
 
 .video-container {
-  width: 90vw;
+  max-width: 100%;
 }
 
 .fit-image {
   border-radius: 8px;
   width: 90vw;
   height: 450px;
-}
-
-.fucked {
-  border: 1px solid black;
 }
