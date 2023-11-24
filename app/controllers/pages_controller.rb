@@ -4,4 +4,7 @@ class PagesController < ApplicationController
   def home
     @coffees = Coffee.limit(4).order(rating: :desc)
   end
+
+  def about
+  end
 end
