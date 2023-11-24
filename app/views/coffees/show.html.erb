@@ -28,7 +28,7 @@
         </div>
           <div class="col-12 p-2 text-start origin-div position-relative mx-4">
             <p class="fs-5 fw-bold">Origin:</p>
-            
+
             <p><%= @coffee.origin %></p>
             <div class="coffee-bean position-absolute top-0 end-0">
               <p class="text-end me-1 fw-bold"><i class="fa-solid fa-star pe-1" style="color: #706233;"></i><%= @coffee.rating %></p>
@@ -97,6 +97,6 @@
 
 
 
-<%= render 'layouts/modal', title: 'New cofee' do %>
+<%= render 'layouts/modal', title: 'Buy coffee' do %>
   <%= render 'purchases/form', coffee: @coffee , purchase: Purchase.new %>
 <% end %>

@@ -1,4 +1,4 @@
-  <%= simple_form_for coffee do |f| %>
+<%= simple_form_for(Coffee.new) do |f| %>
   <%= f.input :name, label:false %>
   <%= f.input :origin, label:false %>
   <%= f.input :strength, label:false, collection: 1..5, prompt: "Strength" %>
