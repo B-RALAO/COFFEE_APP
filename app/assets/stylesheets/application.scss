@@ -19,12 +19,24 @@ body {
   color: $primary;
 }
 
-.cool-div {
-  border: 1px solid black;
+.title-text {
+  width: 90vw;
+}
+
+.title-size {
+  font-size: 5rem;
+  font-weight: bolder;
+  letter-spacing: 0.3px;
+  text-shadow: 1px 1px 5px $danger;
+}
+
+.motto-size {
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+  text-shadow: 1px 1px 10px $danger;
 }
 
 .video-container {
-  // border: 1px solid black;
   width: 90vw;
 }
 
