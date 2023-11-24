@@ -19,5 +19,4 @@ Rails.application.routes.draw do
   resources :coffees do
     resources :purchases, only: %i[index show destroy new create]
   end
-
 end
