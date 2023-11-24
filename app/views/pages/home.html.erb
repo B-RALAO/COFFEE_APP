@@ -1,8 +1,11 @@
-
 <div class="container">
-   <h1 class="text-center text-primary">Top Coffees</h1>
+   <h1 class="text-center text-primary fw-light">Top Coffees</h1>
   <div class="d-flex justify-content-end pe-4">
-    <p> <%= link_to "View all coffees", coffees_path %></p>
+    <% if user_signed_in? %>
+      <p> <%= link_to "View all coffees", coffees_path %></p>
+    <%else %>
+      <p> <%= link_to "Sign in to view more coffees!", coffees_path %></p>
+    <% end %>
   </div>
   <div class="row">
     <% if @coffees.any? %>
@@ -13,5 +16,4 @@
       <p>No coffees yet!</p>
     <% end %>
   </div>
-
 </div>

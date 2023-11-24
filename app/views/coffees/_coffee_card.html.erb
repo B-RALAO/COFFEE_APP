@@ -11,7 +11,7 @@
           <h2><%= coffee.name %></h2>
           <h2> £<%= coffee.price %></h2>
         </div>
-        <p>Origin: <%= coffee.origin %></p>
+        <p>Origin: <%= coffee.origin.split(',')[1].strip %></p>
         <p>Strength: <%= coffee.strength %></p>
         <p>Rating: <%= coffee.rating %></p>
         <%= link_to "More Info", coffee_path(coffee), class: "info-button btn w-100" %>

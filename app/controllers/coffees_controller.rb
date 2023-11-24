@@ -4,16 +4,8 @@ class CoffeesController < ApplicationController
 
   def index
     @coffees = Coffee.all
-    @markers = @coffees.geocoded.map do |coffee|
-      {
-        lat: coffee.latitude,
-        lng: coffee.longitude
-      }
-    end
     if params[:search].present?
-      PgSearch::Multisearch.rebuild(Coffee)
-      results = PgSearch.multisearch(params[:search])
-      @coffees = results.map { |result| result.searchable}
+      search_coffee
     end
   end
 
@@ -62,8 +54,15 @@ class CoffeesController < ApplicationController
         lat: coffee.latitude,
         lng: coffee.longitude,
         info_window_html: render_to_string(partial: "info_window", locals: {coffee: coffee}),
+        marker_html: render_to_string(partial: "marker")
       }
     end
+  end
+
+  def search_coffee
+    PgSearch::Multisearch.rebuild(Coffee)
+    results = PgSearch.multisearch(params[:search])
+    @coffees = results.map { |result| result.searchable}
   end
 
   private
