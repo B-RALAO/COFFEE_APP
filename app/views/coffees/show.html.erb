@@ -1,14 +1,17 @@
 <div class="m-5 d-flex justify-content-center align-items-center main-container">
   <div class="col-6 p-3 d-flex justify-content-center shadow full-container">
     <div class="col-6 d-flex justify-content-center big-container">
-      <div class="col-12 d-flex justify-content-around align-items-center flex-column just-test">
-        <div class="col-12 text-center h2-div">
-          <h2 class="fs-1 fw-bold"><%= @coffee.name %></h2>
+      <div class="col-12 d-flex justify-content-around align-items-center flex-column just-test position-relative">
+        <div class="arrow-container position-absolute top-0 start-0">
+          <%= link_to coffees_path do %>
+              <i class="fa-solid fa-arrow-right fa-rotate-180 fs-5" style="color: #706233;"></i>
+          <% end %>
         </div>
 
         <div class="shadow-sm image-div">
             <% if @coffee.photo.attached?  %>
-               <%= cl_image_tag @coffee.photo.key, width: 300, height: 300, crop: :scale, class: "rounded shadow-sm" %>
+
+              <%= cl_image_tag @coffee.photo.key, width: 300, height: 500, crop: :scale, class: "rounded shadow-sm" %>
             <% else %>
                 <%= image_tag "coffee_beans.png", width: 300 %>
             <% end %>
@@ -17,21 +20,28 @@
     </div>
 
     <div class="d-flex col-6 justify-content-center big-container">
-      <div class="d-flex flex-column justify-content-around align-items-center just-test">
+      <div class="d-flex flex-column justify-content-around align-items-center">
       <%# Add rating to the right top corner %>
 
-
-          <div class="col-12 p-2 text-start origin-div position-relative">
-            <p class="fs-4 fw-bold">Origin:</p>
+        <div class="col-12 text-center h2-div">
+          <h2 class="fs-1 fw-bold"><%= @coffee.name %></h2>
+        </div>
+          <div class="col-12 p-2 text-start origin-div position-relative mx-4">
+            <p class="fs-5 fw-bold">Origin:</p>
+            
             <p><%= @coffee.origin %></p>
             <div class="coffee-bean position-absolute top-0 end-0">
-              <p class="text-end me-1 fw-bold"><%= @coffee.rating %></p>
+              <p class="text-end me-1 fw-bold"><i class="fa-solid fa-star pe-1" style="color: #706233;"></i><%= @coffee.rating %></p>
+            </div>
+            <div class="coffee-bean position-absolute bottom-0 end-0">
+              <p class="text-end me-1 fw-bold">£<%= @coffee.price %></p>
             </div>
           </div>
 
 
-          <div class="col-12 p-2 text-start strength-div">
-            <p class="fs-4 fw-bold">Strength:</p>
+          <div class="col-12 p-2 text-start strength-div mx-4">
+            <p class="fs-5 fw-bold">Strength:</p>
+
             <p class="ps-2"><%= @coffee.strength %>
             <% @coffee.strength.to_i.times do %>
                 <%= image_tag 'single_coffee_bean.png', width: 30, class: "beans" %>
@@ -40,20 +50,38 @@
           </div>
 
 
-          <div class="col-12 p-2 text-start description-div">
-            <p class="fs-4 fw-bold">Description:</p>
+          <div class="col-12 p-2 text-start description-div mx-4">
+            <%# <p class="fs-4 fw-bold">Description:</p> %>
             <p><%= @coffee.description.capitalize %></p>
           </div>
 
+          <div class="d-flex justify-content-evenly me-5">
+            <div class="col-12 text-start description-div pe-1 me-1">
+              <p class="fs-5 fw-bold">Variety:</p>
+              <p><%= @coffee.variety.capitalize %></p>
+            </div>
+
+            <div class="col-12 text-start description-div me-1">
+              <p class="fs-5 fw-bold">Grind:</p>
+              <p><%= @coffee.grind.capitalize %></p>
+            </div>
+          </div>
+
+          <div class="col-12 p-2 text-start description-div mx-4">
+            <p class="fs-5 fw-bold">Intensity:</p>
+            <p><%= @coffee.intensifier.capitalize %></p>
+          </div>
 
       <div class="buy-div text-center">
-        <p>THIS WILL BE THE PLACE WHERE WE'LL ADD THE BUYING OPTIONS</p>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalWindow">
+            Request
+          </button>
       </div>
 
+      <hr>
+
+      <% if @coffee.user_id == current_user.id %>
         <div class="col-12 d-flex justify-content-around text-center buttons-div">
-          <%= link_to coffees_path do %>
-            <i class="fa-solid fa-backward fs-4" style="color: #706233;"></i>
-          <% end %>
           <%= link_to edit_coffee_path(@coffee) do %>
             <i class="fa-solid fa-pen-to-square fs-4" style="color: #706233;"></i>
           <% end %>
@@ -61,7 +89,14 @@
             <i class="fa-solid fa-trash fs-4" style="color: #706233;"></i>
           <% end %>
         </div>
+      <% end %>
       </div>
     </div>
   </div>
 </div>
+
+
+
+<%= render 'layouts/modal', title: 'New cofee' do %>
+  <%= render 'purchases/form', coffee: @coffee , purchase: Purchase.new %>
+<% end %>

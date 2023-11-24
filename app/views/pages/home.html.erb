@@ -1,5 +1,37 @@
 <div class="container">
    <h1 class="text-center text-primary fw-light">Top Coffees</h1>
+  <div class="my-5 video-container d-flex justify-content-center position-relative">
+    <%= image_tag 'coffee_video1.gif', class: 'shadow mx-3 fit-image opacity-50', style: 'height: 300px width: auto' %>
+    <div class="ms-3 ps-5 title-text position-absolute bottom-0 start-50 translate-middle">
+      <h2 class="title-size mb-5">Stars Coffee</h2>
+      <h4 class="ps-3 motto-size">Awaken Your Senses, One Bean at a Time!</h4>
+    </div>
+  </div>
+
+
+  <div class="dropdown d-flex justify-content-center mt-3">
+
+    <a class="dropdown-toggle btn btn" href="#" id="Dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      See other Top Coffees
+    </a>
+
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li><a class="dropdown-item" href="#">Europe</a></li>
+      <li><a class="dropdown-item" href="#">North America</a></li>
+      <li><a class="dropdown-item" href="#">South America</a></li>
+      <li><a class="dropdown-item" href="#">Africa</a></li>
+      <li><a class="dropdown-item" href="#">Asia</a></li>
+      <li><a class="dropdown-item" href="#">Australia</a></li>
+
+
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#">Moon</a></li>
+      <li><a class="dropdown-item" href="#">Mars</a></li>
+    </ul>
+  </div>
+
+  <h1 class="text-center text-primary fw-light m-3">Top Coffees</h1>
+
   <div class="d-flex justify-content-end pe-4">
     <% if user_signed_in? %>
       <p> <%= link_to "View all coffees", coffees_path %></p>

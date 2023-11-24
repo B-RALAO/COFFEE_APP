@@ -12,6 +12,11 @@ Rails.application.routes.draw do
   get "/about", to: "pages#about"
   get "/coffees/map", to: "coffees#map"
 
-  resources :coffees
 
+  resources :coffees do
+    resources :purchases, only: %i[index show destroy new create]
+  end
+
+  get "/coffees/map", to: "coffees#map"
+  
 end
