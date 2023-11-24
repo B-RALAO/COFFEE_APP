@@ -4,6 +4,17 @@ class CoffeesController < ApplicationController
 
   def index
     @coffees = Coffee.all
+    @markers = @coffees.geocoded.map do |coffee|
+      {
+        lat: coffee.latitude,
+        lng: coffee.longitude
+      }
+    end
+    if params[:search].present?
+      PgSearch::Multisearch.rebuild(Coffee)
+      results = PgSearch.multisearch(params[:search])
+      @coffees = results.map { |result| result.searchable}
+    end
   end
 
   def show
@@ -11,6 +22,10 @@ class CoffeesController < ApplicationController
 
   def new
     @coffee = Coffee.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
@@ -38,6 +53,17 @@ class CoffeesController < ApplicationController
     @coffee.destroy
 
     redirect_to coffees_path
+  end
+
+  def map
+    @coffees = Coffee.all
+    @markers = @coffees.geocoded.map do |coffee|
+      {
+        lat: coffee.latitude,
+        lng: coffee.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {coffee: coffee}),
+      }
+    end
   end
 
   private
